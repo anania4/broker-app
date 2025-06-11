@@ -1,0 +1,4 @@
+{
+  "git.ignoreLimitWarning": true,
+  "dart.flutterSdkPath": ".fvm/versions/3.13.0"
+}

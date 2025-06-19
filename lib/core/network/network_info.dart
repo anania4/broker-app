@@ -10,7 +10,7 @@ abstract class NetworkInfoI {
 }
 
 class NetworkInfo implements NetworkInfoI {
-  Connectivity connectivity;
+  final Connectivity connectivity;
 
   static final NetworkInfo _networkInfo = NetworkInfo._internal(Connectivity());
 
@@ -18,30 +18,26 @@ class NetworkInfo implements NetworkInfoI {
     return _networkInfo;
   }
 
-  NetworkInfo._internal(this.connectivity) {
-    connectivity = this.connectivity;
-  }
+  NetworkInfo._internal(this.connectivity);
 
-  ///checks internet is connected or not
-  ///returns [true] if internet is connected
-  ///else it will return [false]
+  /// Checks if the device is connected to the internet.
+  /// Returns [true] if connected (Wi-Fi, mobile, etc.), else [false].
   @override
   Future<bool> isConnected() async {
-    final result = await connectivity.checkConnectivity();
-    if (result != ConnectivityResult.none) {
-      return true;
-    }
-    return false;
+    final results = await connectivity.checkConnectivity();
+    return results.isNotEmpty && results.any((result) => result != ConnectivityResult.none);
   }
 
-  // to check type of internet connectivity
+  /// Gets the current connectivity type (e.g., Wi-Fi, mobile).
   @override
   Future<ConnectivityResult> get connectivityResult async {
-    return connectivity.checkConnectivity();
+    final results = await connectivity.checkConnectivity();
+    return results.isNotEmpty ? results.first : ConnectivityResult.none;
   }
 
-  //check the type on internet connection on changed of internet connection
+  /// Streams changes in connectivity type.
   @override
   Stream<ConnectivityResult> get onConnectivityChanged =>
-      connectivity.onConnectivityChanged;
+      connectivity.onConnectivityChanged.map((results) =>
+          results.isNotEmpty ? results.first : ConnectivityResult.none);
 }

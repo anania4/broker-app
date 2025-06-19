@@ -76,7 +76,7 @@ class _PaymentWebPageState extends State<PaymentWebPage> {
         });
         exitPaymentPage(ConstantStrings.connectionError);
       }
-    });
+    } as void Function(List<ConnectivityResult> event)?);
   }
 
   void exitPaymentPage(String message) {
@@ -121,7 +121,7 @@ class _PaymentWebPageState extends State<PaymentWebPage> {
           children: <Widget>[
             Expanded(
               child: InAppWebView(
-                initialUrlRequest: URLRequest(url: Uri.parse(widget.url)),
+                initialUrlRequest: URLRequest(url: Uri.parse(widget.url) as WebUri),
                 onWebViewCreated: (controller) {
                   setState(() {
                     webViewController = controller;

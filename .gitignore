@@ -1,3 +1,80 @@
 
 # FVM Version Cache
 .fvm/
+# Dart
+.dart_tool/
+.packages
+.pub-cache/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+
+# Flutter
+.flutter-*
+generated_plugin_registrant.dart
+
+# Android
+/android/.gradle/
+/android/captures/
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
+*.apk
+*.ap_
+
+# iOS
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner.xcworkspace/
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/app.flx
+ios/Flutter/ephemeral/
+
+# Xcode
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+DerivedData/
+.idea/
+
+# Web
+/web/.dart_tool/
+/web/build/
+/web/generated_plugin_registrant.dart
+
+# Linux
+linux/flutter/ephemeral/
+
+# macOS
+macos/Flutter/ephemeral/
+macos/Pods/
+
+# Windows
+windows/flutter/ephemeral/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+*.ipr
+*.iws
+*.swp
+
+# Others
+*.log
+*.lock
+.DS_Store
+*.tmp
+*.bak
+*.old
+*.orig
+*.rej
+

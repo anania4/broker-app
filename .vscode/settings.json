@@ -1,5 +1,7 @@
 {
   "git.ignoreLimitWarning": true,
-  "dart.flutterSdkPath": ".fvm/versions/3.13.0",
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "1dart.flutterSdkPath": ".fvm/versions/3.13.0",
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "IDX.aI.enableInlineCompletion": true,
+  "IDX.aI.enableCodebaseIndexing": true
 }
